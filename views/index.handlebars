@@ -1,0 +1,41 @@
+<!--  ./views/index.handlebars -->
+<div class="container py-5">
+
+    <h1 class="text-center">你想對誰說幹話</h1>
+
+    <form method="POST" action="/">
+    <!-- place image and check box here -->
+    <div class="row mt-5 justify-content-between py-4 px-2 bg-info" >
+        <!-- Occupations here -->
+        {{#each targets}}
+            <div class="card-deck col-4">
+                <div class="card text-center">
+                    {{!-- card body --}}
+                    <div class="card-body">
+                        <img src="{{this.image}}" class="card-img-top" style="width: 100%" alt="">
+                    </div>
+                    {{!-- card footer --}}
+                    <div class="card-footer">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="{{this.name}}" name="target" class="custom-control-input" value="{{this.name}}" {{this.checked}}>
+                            <label class="custom-control-label" for="{{this.name}}">
+                            <h5 class="text-center">{{this.title}}</h5>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        {{/each}}
+    </div>
+
+    <!-- 幹話 -->
+     <div class="row mt-5">
+        <div class="col-auto pl-0">
+            <button class="btn btn-outline-dark rounded-0" type="submit">產生幹話</button>
+        </div>
+        <div class="col-auto flex-grow-1 p-0 pr-3">
+            <textarea class="w-100" name="result-display" id="result-display" cols="30" rows="4">{{message}}</textarea>
+        </div>
+    </div>
+    </form>
+</div>
