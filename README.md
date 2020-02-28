@@ -11,5 +11,5 @@
 1. npm run dev
 2. open your browser, this application will be http://localhost:3000/ 
 
-#Feature
+# Feature
 使用者點擊想說幹話對象的單選框，再點擊「產生幹話」按鈕，即可產生幹話
